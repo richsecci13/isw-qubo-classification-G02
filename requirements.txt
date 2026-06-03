@@ -4,3 +4,5 @@
 pandas
 scikit-learn
 pytest
+dimod
+dwave-neal
