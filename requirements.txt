@@ -6,3 +6,5 @@ scikit-learn
 pytest
 dimod
 dwave-neal
+xgboost
+joblib
