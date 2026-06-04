@@ -176,8 +176,8 @@ def select_features(
         "training_dataset_size": len(df_train),
         "test_dataset_size": len(df_test),
         "q_matrix_creation_time": round(q_matrix_creation_time, 4),
-        "mean optimization time": round(mean_opt_time, 4),
-        "std_dev_optimization _time": round(std_opt_time, 4)
+        "mean_optimization_time": round(mean_opt_time, 4),
+        "std_dev_optimization_time": round(std_opt_time, 4)
     }
     
     with open(output_json, 'w') as f:
@@ -209,8 +209,8 @@ if __name__ == "__main__":
         output_json=args.out_json,
         target_column=args.target,
         percTest=args.perc_test,
+        percSelected=args.perc_selected,
         allowance=args.allowance,
         seed=args.seed,
-        percSelected=args.perc_selected,
         alpha_computations=args.alpha_computations
     )

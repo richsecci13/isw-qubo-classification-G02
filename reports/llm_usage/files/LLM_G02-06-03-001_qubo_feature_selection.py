@@ -209,8 +209,8 @@ if __name__ == "__main__":
         output_json=args.out_json,
         target_column=args.target,
         percTest=args.perc_test,
+        percSelected=args.perc_selected,
         allowance=args.allowance,
         seed=args.seed,
-        percSelected=args.perc_selected,
         alpha_computations=args.alpha_computations
     )
