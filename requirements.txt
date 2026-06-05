@@ -8,3 +8,5 @@ dimod
 dwave-neal
 xgboost
 joblib
+streamlit
+altair
