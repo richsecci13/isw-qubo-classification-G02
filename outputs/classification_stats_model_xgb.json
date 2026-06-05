@@ -1,0 +1,36 @@
+{
+    "classifier": "XGBClassifier",
+    "n_samples": 6000,
+    "target_1_count": 128,
+    "target_1_percentage": 2.13,
+    "accuracy": 0.9873333333333333,
+    "class_0": {
+        "precision": 0.989527027027027,
+        "recall": 0.9976158038147139,
+        "f1": 0.9935549525101763,
+        "support": 5872
+    },
+    "class_1": {
+        "precision": 0.825,
+        "recall": 0.515625,
+        "f1": 0.6346153846153846,
+        "support": 128
+    },
+    "roc_auc": 0.9563979478882833,
+    "confusion_matrix": {
+        "labels": [
+            0,
+            1
+        ],
+        "matrix": [
+            [
+                5858,
+                14
+            ],
+            [
+                62,
+                66
+            ]
+        ]
+    }
+}
