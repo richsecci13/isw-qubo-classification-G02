@@ -5,3 +5,4 @@ TODO.md
 src/qubo_project/__pycache__/
 tests/__pycache__/
 data/trial_dataset_ISW.csv
+data/uploaded_dataset.csv
