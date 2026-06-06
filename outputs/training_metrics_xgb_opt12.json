@@ -1,0 +1,13 @@
+{
+    "classifier": "xgboost",
+    "seed": 42,
+    "training_dataset": "training_reduced.csv",
+    "target_column": "target",
+    "model_path": "model_xgb_opt12.joblib",
+    "n_samples": 14000,
+    "n_features": 19,
+    "target_1_percentage": 1.46,
+    "optimal_threshold": 0.3,
+    "dataset_input_time": 0.02,
+    "training_time": 0.29
+}

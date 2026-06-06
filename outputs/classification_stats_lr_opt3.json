@@ -1,0 +1,37 @@
+{
+    "classifier": "LogisticRegression",
+    "n_samples": 6000,
+    "target_1_count": 128,
+    "target_1_percentage": 2.13,
+    "applied_threshold": 0.9000000000000002,
+    "accuracy": 0.9635,
+    "class_0": {
+        "precision": 0.994748818484159,
+        "recall": 0.9678133514986376,
+        "f1": 0.9810962451445835,
+        "support": 5872
+    },
+    "class_1": {
+        "precision": 0.34146341463414637,
+        "recall": 0.765625,
+        "f1": 0.472289156626506,
+        "support": 128
+    },
+    "roc_auc": 0.968571717472752,
+    "confusion_matrix": {
+        "labels": [
+            0,
+            1
+        ],
+        "matrix": [
+            [
+                5683,
+                189
+            ],
+            [
+                30,
+                98
+            ]
+        ]
+    }
+}

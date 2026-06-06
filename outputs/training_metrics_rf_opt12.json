@@ -1,0 +1,13 @@
+{
+    "classifier": "random_forest",
+    "seed": 42,
+    "training_dataset": "training_reduced.csv",
+    "target_column": "target",
+    "model_path": "model_rf_opt12.joblib",
+    "n_samples": 14000,
+    "n_features": 19,
+    "target_1_percentage": 1.46,
+    "optimal_threshold": 0.6,
+    "dataset_input_time": 0.06,
+    "training_time": 0.52
+}

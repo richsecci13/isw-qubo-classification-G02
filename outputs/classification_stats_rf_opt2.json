@@ -1,0 +1,37 @@
+{
+    "classifier": "RandomForestClassifier",
+    "n_samples": 6000,
+    "target_1_count": 128,
+    "target_1_percentage": 2.13,
+    "applied_threshold": 0.30000000000000004,
+    "accuracy": 0.9876666666666667,
+    "class_0": {
+        "precision": 0.991856124872752,
+        "recall": 0.9955722070844687,
+        "f1": 0.9937106918238994,
+        "support": 5872
+    },
+    "class_1": {
+        "precision": 0.7547169811320755,
+        "recall": 0.625,
+        "f1": 0.6837606837606838,
+        "support": 128
+    },
+    "roc_auc": 0.9578927271372616,
+    "confusion_matrix": {
+        "labels": [
+            0,
+            1
+        ],
+        "matrix": [
+            [
+                5846,
+                26
+            ],
+            [
+                48,
+                80
+            ]
+        ]
+    }
+}

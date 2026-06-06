@@ -1,0 +1,17 @@
+{
+    "classifier": "logistic_regression",
+    "seed": 42,
+    "training_dataset": "training_reduced.csv",
+    "target_column": "target",
+    "model_path": "model_lr_opt23.joblib",
+    "n_samples": 14000,
+    "n_features": 19,
+    "target_1_percentage": 1.46,
+    "best_hyperparameters": {
+        "solver": "lbfgs",
+        "C": 10.0
+    },
+    "optimal_threshold": 0.3,
+    "dataset_input_time": 0.2,
+    "training_time": 1.55
+}
