@@ -54,7 +54,7 @@ cd isw-qubo-classification-G02
 
 2. Create a virtual environment and activate it:
 ```bash
-python -m venv .venv
+python -m venv .venv       # Or python3 -m venv .venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 ```
 
