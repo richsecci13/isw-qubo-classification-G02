@@ -1,8 +1,4 @@
 .venv/
-TODO.md
 1. templates/
 .pytest_cache/
-src/qubo_project/__pycache__/
-tests/__pycache__/
-data/trial_dataset_ISW.csv
-data/uploaded_dataset.csv
+__pycache__/
