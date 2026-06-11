@@ -34,20 +34,19 @@ def train(
     # --- 2. Calculate Class Imbalance ---
     num_class_0 = (y == 0).sum()
     num_class_1 = (y == 1).sum()
-    scale_pos_w = float(num_class_0 / num_class_1) if num_class_1 > 0 else 1.0
 
     # --- 3. Classifier Setup & Hyperparameter Grids (Optimization #3) ---
     clf_name = classifier.lower().strip()
     
     if clf_name in ["random_forest", "randomforest"]:
-        base_model = RandomForestClassifier(random_state=seed, class_weight='balanced')
+        base_model = RandomForestClassifier(random_state=seed)
         param_grid = {
             'n_estimators': [50, 100, 200],
             'max_depth': [None, 10, 20, 30],
             'min_samples_split': [2, 5, 10]
         }
     elif clf_name in ["xgb", "xgboost"]:
-        base_model = XGBClassifier(random_state=seed, eval_metric='logloss', scale_pos_weight=scale_pos_w)
+        base_model = XGBClassifier(random_state=seed, eval_metric='logloss')
         param_grid = {
             'learning_rate': [0.01, 0.1, 0.2],
             'max_depth': [3, 5, 7],
@@ -55,7 +54,7 @@ def train(
             'subsample': [0.8, 1.0]
         }
     elif clf_name in ["logistic_regression", "logisticregression"]:
-        base_model = LogisticRegression(random_state=seed, max_iter=2000, class_weight='balanced')
+        base_model = LogisticRegression(random_state=seed, max_iter=2000)
         param_grid = {
             'C': [0.01, 0.1, 1.0, 10.0],
             'solver': ['lbfgs', 'liblinear']
