@@ -1,3 +1,14 @@
+Congratulations on completing the pipeline! You have built a robust, enterprise-grade machine learning system that strictly adheres to the project specifications.
+
+Below is the complete, professional `README.md` file tailored exactly to the requirements outlined in the PDF. It covers the project description, repository structure, installation instructions, GUI launch commands, CLI execution, and automated testing .
+
+You can copy and paste this directly into your repository's root directory.
+
+---
+
+### **`README.md`**
+
+```markdown
 # QUBO Feature Reduction & Credit Risk Classification
 
 This repository contains a complete Python machine learning pipeline for binary classification, specifically designed to assess credit risk ("0" for reliable, "1" for risky). The core innovation of this project is the use of Quadratic Unconstrained Binary Optimization (QUBO) via Simulated Annealing to perform advanced feature reduction prior to model training.
@@ -8,7 +19,7 @@ This project was developed for the Ingegneria del Software (Software Engineering
 
 The pipeline is divided into four main modular phases:
 1. **Preprocessing:** Cleans raw CSV data, drops sparse features based on a configurable threshold, normalizes numeric data using Z-score standardization, and splits the data sequentially into training and testing sets.
-2. **QUBO Feature Selection:** Formulates feature selection as a QUBO problem. It balances target influence (Spearman correlation with the target) against feature independence (penalizing collinearity). It uses a Binary Search approach over the penalty parameter ($\alpha$) with D-Wave's `neal` Simulated Annealing sampler to efficiently extract a targeted percentage of features.
+2. **QUBO Feature Selection:** Formulates feature selection as a QUBO problem. It balances target influence (Spearman correlation with the target) against feature independence (penalizing collinearity). It uses a Two-Phase Binary/Linear search with D-Wave's `neal` Simulated Annealing sampler to find the global energy minimum for a targeted percentage of features.
 3. **Model Training:** Supports Random Forest, XGBoost, and Logistic Regression. It automatically handles class imbalances, performs hyperparameter grid-search targeting the F1-score, and dynamically tunes the decision threshold. 
 4. **Prediction & Inference:** Evaluates the trained models on the reduced test set, producing detailed metrics (Accuracy, ROC-AUC, F1, Precision, Recall, and Confusion Matrices).
 
@@ -17,7 +28,7 @@ The pipeline is divided into four main modular phases:
 The repository strictly follows the required layout for automated evaluation:
 
 ```text
-isw-qubo-classification-G02/
+isw-qubo-classification-GXX/
 ├── README.md
 ├── requirements.txt
 ├── group_info.yaml
@@ -48,14 +59,14 @@ isw-qubo-classification-G02/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/richsecci13/isw-qubo-classification-G02
-cd isw-qubo-classification-G02
+git clone <repository_url>
+cd isw-qubo-classification-GXX
 ```
 
 2. Create a virtual environment and activate it:
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ```
 
 3. Install the dependencies:
@@ -138,5 +149,14 @@ pytest tests/ -v
 
 ## 👥 Group Information
 
-* **Group ID:** G02
-* **Members:** 66498, 66410
+* **Group ID:** GXX
+* **Members:** [Add Matricola 1], [Add Matricola 2]
+
+***
+
+### **Final Polish Checklist**
+Before you zip the project or push it to GitHub for the final submission, ensure you do the following:
+1. Replace the `GXX` and `[Add Matricola X]` placeholders in the `README.md`, repository folder name, and `group_info.yaml` with your actual group details.
+2. Clear out any massive experimental datasets from the `data/` folder, leaving ONLY the `sample_test_dataset.csv` required for `pytest`.
+3. Generate your `requirements.txt` using `pip freeze > requirements.txt` (clean it up so it only includes the necessary libraries like pandas, scikit-learn, xgboost, dimod, neal, streamlit, and pytest).
+```
