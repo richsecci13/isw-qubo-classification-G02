@@ -14,10 +14,10 @@ schema_version: "1.0"
 
 group_id: "G02"
 repository_url: "https://github.com/richsecci13/isw-qubo-classification-G02"
-submission_date: "2026-06-15"
+submission_date: "2026-06-12"
 
 students:
-  - student_id: "60/61/66498"
+  - student_id: "66498"
     role_in_project:
       - "preprocessing"
       - "feature_selection"
@@ -25,7 +25,7 @@ students:
       - "testing"
       - "documentation"
       - "gui"
-  - student_id: "60/61/66410"
+  - student_id: "66410"
     role_in_project:
       - "preprocessing"
       - "feature_selection"
@@ -36,154 +36,156 @@ students:
 
 team_work:
   work_distribution:
-    design_percent: null
-    preprocessing_percent: null
-    qubo_feature_selection_percent: null
-    classification_percent: null
-    testing_percent: null
-    gui_percent: null
-    documentation_percent: null
+    design_percent: 50
+    preprocessing_percent: 50
+    qubo_feature_selection_percent: 50
+    classification_percent: 50
+    testing_percent: 50
+    gui_percent: 50
+    documentation_percent: 50
   collaboration_mode:
-    # valori suggeriti: "pair_programming", "divisione_per_moduli", "mista"
-    type: null
-    notes: null
-    remote_collaboration_perc: 0   # Percentuale di lavoro in call (0-100)
+    type: "pair_programming"
+    notes: "All development was done together in person, side by side."
+    remote_collaboration_perc: 0
   estimated_total_hours:
-    student_1_hours: null
-    student_2_hours: null
-    total_group_hours: null
+    student_1_hours: 25
+    student_2_hours: 25
+    total_group_hours: 25 # All hours were done side by side, so total group hours remains 25
 
 initial_context:
   prior_experience:
-    # valori da usare: "none", "basic", "intermediate", "advanced"
-    python: null
-    pandas_numpy: null
-    scikit_learn: null
-    machine_learning: null
-    classification: null
-    feature_selection: null
-    optimization: null
-    QUBO: null
-    git_github: null
+    python: "intermediate"
+    pandas_numpy: "intermediate"
+    scikit_learn: "intermediate"
+    machine_learning: "intermediate"
+    classification: "intermediate"
+    feature_selection: "basic"
+    optimization: "basic"
+    QUBO: "none"
+    git_github: "intermediate"
   initial_confidence:
-    # scala 1-5: 1 = per nulla sicuri, 5 = molto sicuri
-    python_project_development: null
-    qubo_formulation: null
-    machine_learning: null
-    debugging: null
-    validating_llm_outputs: null
+    python_project_development: 4
+    qubo_formulation: 3
+    machine_learning: 4
+    debugging: 3
+    validating_llm_outputs: 4
 
 design_choices:
-  correlation_computation: null
+  correlation_computation: "We used Spearman correlation as it does not assume linearity and handles monotonic relationships better."
   QUBO_optimization_algorithm:
-    algorithm_name: null
-    library_used: null
-    reason_for_choice: null
+    algorithm_name: "Simulated Annealing"
+    library_used: "dwave-neal"
+    reason_for_choice: "It is fast, runs locally on a standard CPU, and doesn't require a real quantum computer."
   classification_algorithm:
-    algorithm_name: null
-    library_used: null
-    reason_for_choice: null
-  gui_development: null
+    algorithm_name: "Random Forest (mandatory), XGBoost, Logistic Regression"
+    library_used: "scikit-learn, xgboost"
+    reason_for_choice: "XGBoost was chosen for its high-performance gradient boosting capabilities, while Logistic Regression provides a fast, interpretable linear baseline."
+  gui_development: "Streamlit was chosen due to its rapid prototyping capabilities for data applications in Python."
   problems_encountered:
-    - problem: null
-      solution: null
-  notes:
+    - problem: "GridSearch combined with Threshold tuning caused unexpected F1-score drops when Class Weights were balanced."
+      solution: "Removed Class Weighting parameter and relied solely on Threshold tuning and GridSearch, significantly boosting F1-score to 0.71."
+  notes: "The pipeline was designed to be highly modular and testable."
 
 llm_usage_summary:
-  # Non inserire prompt o risposte complete: saranno raccolti separatamente.
-  llms_used:    # Inserire un record per ogni LLM usato
-    - name: null
-      version: null
-      paid_subscription: null
-      usage_level_0_to_3:   # valori da 0 (non usato) a 3 (usatissimo)     
-        value: null   
+  llms_used:
+    - name: "Gemini"
+      version: "3.1 Pro"
+      paid_subscription: true
+      usage_level_0_to_3:
+        value: 3
   phases_where_llm_was_used:
     requirements_understanding:
-      usage_level_0_to_3: null
+      usage_level_0_to_3: 0
       usefulness_1_to_5: null
       notes: null
     preprocessing:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Generated preprocessing logic efficiently."
     qubo_formulation:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Helped translate the mathematical formula into D-Wave BQM code."
     optimizer_selection:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 4
+      notes: "Suggested using D-Wave's neal Simulated Annealing as the local QUBO solver."
     classifier_selection:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 2
+      usefulness_1_to_5: 4
+      notes: "Suggested standard scalable algorithms."
     debugging:
-      usage_level_0_to_3: null
+      usage_level_0_to_3: 0
       usefulness_1_to_5: null
-      notes: null
+      notes: "Debugging was entirely done manually, no error tracebacks were sent to the LLM."
     testing:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Generated comprehensive pytest suites."
     documentation:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Formatted the README flawlessly."
     gui:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
-      notes: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
+      notes: "Created the entire Streamlit dashboard structure."
   estimated_llm_contribution:
-    percent_code_generated_or_suggested_by_llm: null
-    percent_code_accepted_without_major_changes: null
-    percent_documentation_generated_or_suggested_by_llm: null
+    percent_code_generated_or_suggested_by_llm: 85
+    percent_code_accepted_without_major_changes: 75
+    percent_documentation_generated_or_suggested_by_llm: 90
   human_verification:
-    # descrivere come il gruppo ha controllato gli output dell'LLM. (yes/partially/no)
     methods_used:
-      - code_execution: null
-      - automated_tests: null
-      - critical_reading: null
-      - comparison_with_other_llm: null
-    notes: null
+      - code_execution: "yes"
+      - automated_tests: "yes"
+      - critical_reading: "yes"
+      - comparison_with_other_llm: "no"
+    notes: "We extensively cross-tested the generated code by running the pipeline and verifying the metrics output."
   llm_misleading_outputs:
-    encountered: null  # (yes/partially/no)
-    examples_count: null   # number of cases
-    categories:     # rispondere con: yes/partially/no
-      wrong_python_code: null  
-      wrong_library_usage: null
-      wrong_qubo_formulation: null
-      wrong_ml_methodology: null
-      hallucinated_api_or_function: null
-      other: null      # indicare quale/quali
-    impact_on_project: null   # valori da 0 (nessuno) a 3 (fortissimo)     
+    encountered: "yes"
+    examples_count: 4
+    categories:
+      wrong_python_code: "yes"
+      wrong_library_usage: "yes"
+      wrong_qubo_formulation: "no"
+      wrong_ml_methodology: "yes"
+      hallucinated_api_or_function: "no"
+      other: "none"
+    impact_on_project: 1
   llm_overall_assessment:  
-    productivity_improvement_1_to_5: null
-    learning_support_1_to_5: null
-    risk_of_overreliance_1_to_5: null
-    trust_in_llm_outputs_1_to_5: null
-    would_use_again: null   # (yes/maybe/no)
-    notes: null
-  most_useful_project_activity: null
-  most_difficult_project_activity: null
-  main_lessons_learned:   # descrivere con una frase per ogni lezione appresa
-    - null
+    productivity_improvement_1_to_5: 5
+    learning_support_1_to_5: 5
+    risk_of_overreliance_1_to_5: 4
+    trust_in_llm_outputs_1_to_5: 3
+    would_use_again: "yes"
+    notes: "Gemini proved to be an excellent pair programmer."
+  most_useful_project_activity: "Working in pair programming and actively discussing code logic together."
+  most_difficult_project_activity: "Model optimization and setting up the overall machine learning pipeline properly."
+  main_lessons_learned:
+    - "Never blindly trust LLM outputs, no matter how good they look. Always review, test, and validate the generated code."
   main_problems:
-    - problem: null
-      severity_1_to_5: null
-      how_resolved: null
+    - problem: "Balancing the dataset classes initially degraded Random Forest performance."
+      severity_1_to_5: 3
+      how_resolved: "Iterative testing and manual removal of the class weights parameter."
+    - problem: "Pandas returned a read-only array when trying to fill the diagonal of the correlation matrix, causing a ValueError."
+      severity_1_to_5: 1
+      how_resolved: "Added a .copy() call when extracting the values array from the pandas DataFrame to ensure it was writable."
 
-final_results:   # descrivere con una frase per ogni elemento che ritenete di citare
+final_results:
   what_worked_well:
-    - null
+    - "The QUBO feature selection via Simulated Annealing effectively reduced the dataset dimensionality by over 80% while maintaining the raw predictive power of the classifiers."
+    - "The architecture we designed proved to be extremely modular, allowing us to easily test different hyperparameters and classifiers."
+    - "The Streamlit GUI provided a clean, user-friendly way to interact with the entire pipeline end-to-end."
   what_did_not_work_well:
-    - null
-  main_benefit_of_using_llm: null
-  main_problem_of_using_llm: null
+    - "Combining multiple class imbalance handling techniques simultaneously caused unexpected F1-score drops."
+    - "Generating unit tests via zero-shot prompts resulted in the AI hallucinating mock datasets instead of utilizing the physical dataset mandated by the specs."
+  main_benefit_of_using_llm: "Drastically reduced time spent on writing code, documentation, and GUI."
+  main_problem_of_using_llm: "The AI very often went beyond the requested specifications without realizing it, suggesting over-engineered solutions that required manual simplification to stay within constraints."
   surprising_findings:
-    - null
+    - "We were surprised by how much more effective simple decision threshold tuning was compared to complex class weighting techniques for optimizing the F1-score."
   limitations_of_the_solution:
-    - null
+    - "The pipeline relies on heuristics (Simulated Annealing) which does not guarantee the absolute global optimum for the QUBO problem."
+    - "While our primary intent was to aggressively maximize the F1-score for the minority class, the extreme imbalance of the dataset remains a structural limitation that makes the models highly sensitive."
   threats_to_validity_from_team_perspective:
-    - null
+    - "Models performance might vary slightly on completely unseen datasets despite GridSearch."
 
